@@ -6,6 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background: linear-gradient(135deg, #a00000, #ff2e2e);
+      color: #ffffff;
+      overflow-x: hidden;
+    }
+
+    /* Corazones de fondo */
     body::before {
       content: "❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️";
       position: fixed;
@@ -32,15 +41,15 @@
     .active {
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
     }
 
-    h1, h2, {
+    h1, h2 {
       font-weight: normal;
       letter-spacing: 1px;
     }
 
+    /* Botón principal */
     button {
       margin-top: 20px;
       padding: 12px 26px;
@@ -53,23 +62,30 @@
       font-weight: bold;
     }
 
+    /* Botón volver */
     .back {
-      position: absolute;
+      position: fixed;
       top: 20px;
       left: 20px;
-      background: transparent;
-      color: #fff;
-      border: 1px solid rgba(255,255,255,0.7);
+      background: white;
+      color: #a00000;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-weight: bold;
+      z-index: 10;
     }
 
     /* Tarjeta estilo Smartbox */
     .smartbox-card {
       max-width: 420px;
+      width: 100%;
       background: rgba(255,255,255,0.12);
       border-radius: 24px;
       padding: 25px;
       box-shadow: 0 0 30px rgba(0,0,0,0.25);
       backdrop-filter: blur(6px);
+      margin-bottom: 30px; /* espacio entre tarjetas */
     }
 
     .image {
@@ -84,6 +100,40 @@
       text-align: left;
       padding-left: 20px;
     }
+
+    /* Botón recuerdos */
+    .recuerdo-btn {
+      background: #ffffff;
+      color: #a00000;
+      border-radius: 30px;
+      padding: 10px 22px;
+    }
+
+    /* Botón experiencia final */
+    .final-btn {
+      background: gold;
+      color: #000;
+      font-weight: bold;
+      padding: 14px 30px;
+      font-size: 15px;
+    }
+
+    /* Botón abrir regalo (principal) */
+    .abrir-btn {
+      background: gold;
+      color: #000;
+      font-size: 16px;
+      padding: 16px 36px;
+      border-radius: 50px;
+      font-weight: bold;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+.abrir-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.4);
+}
 
     .fade {
       animation: fadeIn 1.4s ease forwards;
@@ -101,7 +151,7 @@
 <div class="page active" id="page1">
   <h1>Hay regalos que no se gastan</h1>
   <p>Este es uno de ellos.</p>
-  <button onclick="goToPage(2)">Abrir mi regalo</button>
+  <button class="abrir-btn" onclick="goToPage(2)">Abrir mi regalo</button>
 </div>
 
 <!-- PANTALLA 2 – SMARTBOX -->
@@ -123,7 +173,7 @@
       <li>Dormir con ilusión de habernos conocido</li>
     </ul>
 
-    <button onclick="goToPage(3)">RECUERDOS</button>
+    <button class="recuerdo-btn" onclick="goToPage(3)">RECUERDOS</button>
   </div>
   
   <!-- BLOQUE 2-->
@@ -140,7 +190,7 @@
       <li>Y todo en Cmpello, Valencia</li>
     </ul>
 
-    <button onclick="goToPage(3)">RECUERDOS</button>
+    <button class="recuerdo-btn" onclick="goToPage(3)">RECUERDOS</button>
   </div>
     
   <!-- BLOQUE 3-->
@@ -157,7 +207,7 @@
       <li>Primer viaje de muchos</li>
     </ul>
 
-    <button onclick="goToPage(3)">RECUERDOS</button>
+    <button class="recuerdo-btn" onclick="goToPage(3)">RECUERDOS</button>
   </div>
     
   <!-- BLOQUE 4-->
@@ -174,7 +224,7 @@
       <li>Empezar elos años juntitos</li>
     </ul>
 
-    <button onclick="goToPage(3)">RECUERDOS</button>
+    <button class="recuerdo-btn" onclick="goToPage(3)">RECUERDOS</button>
   </div>
   
   <!-- BLOQUE 5-->
@@ -191,7 +241,7 @@
       <li>Bromas en playas nudistas</li>
     </ul>
 
-    <button onclick="goToPage(3)">RECUERDOS</button>
+    <button class="recuerdo-btn" onclick="goToPage(3)">RECUERDOS</button>
   </div>
   
   <!-- BLOQUE 6-->
@@ -208,7 +258,7 @@
       <li>Estrellas fugaces</li>
     </ul>
 
-    <button onclick="goToPage(3)">RECUERDOS</button>
+    <button class="recuerdo-btn" onclick="goToPage(3)">RECUERDOS</button>
   </div>
   
   <!-- BLOQUE 7-->
@@ -225,7 +275,7 @@
       <li>Comimos muy bien.... como siempre</li>
     </ul>
 
-    <button onclick="goToPage(3)">RECUERDOS</button>
+    <button class="recuerdo-btn" onclick="goToPage(3)">RECUERDOS</button>
   </div>
   
   <!-- BLOQUE 8-->
@@ -242,7 +292,7 @@
       <li>Una vuelta a casa llena de viajes</li>
     </ul>
 
-    <button onclick="goToPage(3)">RECUERDOS</button>
+    <button class="recuerdo-btn" onclick="goToPage(3)">RECUERDOS</button>
   </div>
   
   <!-- BLOQUE 9-->
@@ -259,7 +309,7 @@
       <li>Seguir descubriendo España juntos</li>
     </ul>
 
-    <button onclick="goToPage(3)">RECUERDOS</button>
+    <button class="recuerdo-btn" onclick="goToPage(3)">RECUERDOS</button>
   </div>
   
   <!-- BLOQUE 10-->
@@ -276,7 +326,7 @@
       <li>Un día perfecto con actuacion final increible</li>
     </ul>
 
-    <button onclick="goToPage(3)">RECUERDOS</button>
+    <button class="recuerdo-btn" onclick="goToPage(3)">RECUERDOS</button>
   </div>
   
   <!-- BLOQUE 11-->
@@ -293,7 +343,7 @@
       <li>En españa y fuera de España</li>
     </ul>
 
-    <button onclick="goToPage(3)">RECUERDOS</button>
+    <button class="recuerdo-btn" onclick="goToPage(3)">RECUERDOS</button>
   </div>
   
   
@@ -312,7 +362,7 @@
       <li>Construir un “nosotros” real</li>
     </ul>
 
-    <button onclick="goToPage(3)">Descubrir experiencia</button>
+    <button class="final-btn" onclick="goToPage(3)">Descubrir experiencia</button>
   </div>
 </div>
 
@@ -320,7 +370,7 @@
 <div class="page" id="page3">
   <button class="back" onclick="goToPage(2)">← Volver</button>
   <div class="smartbox-card fade">
-    <h2>Para toda la vida 🤍</h2>
+    <h2>Para toda la vida ❤️</h2>
 
     <p>
       Este regalo no se puede cambiar,<br>
