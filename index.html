@@ -6,11 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
-    body {
-      margin: 0;
-      font-family: 'Georgia', serif;
-      background: #000;
-      color: #f5f5f5;
+    body::before {
+      content: "❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 200%;
+      height: 200%;
+      font-size: 60px;
+      opacity: 0.07;
+      line-height: 120px;
+      transform: rotate(-20deg);
+      pointer-events: none;
     }
 
     .page {
@@ -19,6 +26,7 @@
       padding: 40px 25px;
       box-sizing: border-box;
       text-align: center;
+      position: relative;
     }
 
     .active {
@@ -28,20 +36,21 @@
       align-items: center;
     }
 
-    h1, h2 {
+    h1, h2, {
       font-weight: normal;
       letter-spacing: 1px;
     }
 
     button {
-      margin-top: 30px;
-      padding: 14px 32px;
+      margin-top: 20px;
+      padding: 12px 26px;
       border-radius: 40px;
       border: none;
-      background: linear-gradient(135deg, #fff, #d6d6d6);
-      color: #000;
-      font-size: 15px;
+      background: white;
+      color: #a00000;
+      font-size: 14px;
       cursor: pointer;
+      font-weight: bold;
     }
 
     .back {
@@ -50,23 +59,24 @@
       left: 20px;
       background: transparent;
       color: #fff;
-      border: 1px solid rgba(255,255,255,0.4);
+      border: 1px solid rgba(255,255,255,0.7);
     }
 
-    /* Smartbox style */
+    /* Tarjeta estilo Smartbox */
     .smartbox-card {
       max-width: 420px;
-      background: rgba(255,255,255,0.06);
+      background: rgba(255,255,255,0.12);
       border-radius: 24px;
       padding: 25px;
-      box-shadow: 0 0 30px rgba(255,255,255,0.08);
+      box-shadow: 0 0 30px rgba(0,0,0,0.25);
+      backdrop-filter: blur(6px);
     }
 
     .image {
       width: 100%;
       height: 220px;
       border-radius: 18px;
-      background: linear-gradient(135deg, #333, #111);
+      background: linear-gradient(135deg, #ff6b6b, #a00000);
       margin-bottom: 20px;
     }
 
@@ -113,7 +123,7 @@
       <li>Dormir con ilusión de habernos conocido</li>
     </ul>
 
-    <button onclick="goToPage(3)">Descubrir experiencia</button>
+    <button onclick="goToPage(3)">RECUERDOS</button>
   </div>
   
   <!-- BLOQUE 2-->
@@ -130,10 +140,165 @@
       <li>Y todo en Cmpello, Valencia</li>
     </ul>
 
-    <button onclick="goToPage(3)">Volver a experimentar</button>
+    <button onclick="goToPage(3)">RECUERDOS</button>
+  </div>
+    
+  <!-- BLOQUE 3-->
+  <div class="smartbox-card fade">
+    <div class="image"></div>
+
+    <h2>Primer viaje, Campello</h2>
+    <p><em>Donde ya estaba todo calaro</em></p>
+
+    <ul>
+      <li>Ir con ganas y volver juntos</li>
+      <li>Bromas que recordaremos siempre</li>
+      <li>Primeros baños juntos</li>
+      <li>Primer viaje de muchos</li>
+    </ul>
+
+    <button onclick="goToPage(3)">RECUERDOS</button>
+  </div>
+    
+  <!-- BLOQUE 4-->
+  <div class="smartbox-card fade">
+    <div class="image"></div>
+
+    <h2>Navidades</h2>
+    <p><em>Donde la ilusion siempre está</em></p>
+
+    <ul>
+      <li>Organizandonos para pasarlas juntos</li>
+      <li>Regalos inesperados</li>
+      <li>Regalos con ilusion</li>
+      <li>Empezar elos años juntitos</li>
+    </ul>
+
+    <button onclick="goToPage(3)">RECUERDOS</button>
   </div>
   
-  <!-- BLOQUE 3-->
+  <!-- BLOQUE 5-->
+  <div class="smartbox-card fade">
+    <div class="image"></div>
+
+    <h2>Viaje a Roquetas del Mar</h2>
+    <p><em>Otro viajecito a la playa</em></p>
+
+    <ul>
+      <li>Seguir sumando momentos</li>
+      <li>Mas baños en la playa</li>
+      <li>Experiencias como kayak o snorkel</li>
+      <li>Bromas en playas nudistas</li>
+    </ul>
+
+    <button onclick="goToPage(3)">RECUERDOS</button>
+  </div>
+  
+  <!-- BLOQUE 6-->
+  <div class="smartbox-card fade">
+    <div class="image"></div>
+
+    <h2>Viaje a Cullera</h2>
+    <p><em>Mas playa</em></p>
+
+    <ul>
+      <li>Cenas con vino</li>
+      <li>Arroz con bogabante, como costumbre</li>
+      <li>Cenas de marisco</li>
+      <li>Estrellas fugaces</li>
+    </ul>
+
+    <button onclick="goToPage(3)">RECUERDOS</button>
+  </div>
+  
+  <!-- BLOQUE 7-->
+  <div class="smartbox-card fade">
+    <div class="image"></div>
+
+    <h2>Viaje a Avila</h2>
+    <p><em>Mucho frio</em></p>
+
+    <ul>
+      <li>Viajes de un finde</li>
+      <li>No nos hace falta nada más que nosotros</li>
+      <li>Nos acechava el "Maligno"</li>
+      <li>Comimos muy bien.... como siempre</li>
+    </ul>
+
+    <button onclick="goToPage(3)">RECUERDOS</button>
+  </div>
+  
+  <!-- BLOQUE 8-->
+  <div class="smartbox-card fade">
+    <div class="image"></div>
+
+    <h2>Viaje a Siguenza</h2>
+    <p><em>Mucha agua</em></p>
+
+    <ul>
+      <li>Viajes de un finde, otra vez</li>
+      <li>Una procesion diferente</li>
+      <li>Lavanda que no es lavanda</li>
+      <li>Una vuelta a casa llena de viajes</li>
+    </ul>
+
+    <button onclick="goToPage(3)">RECUERDOS</button>
+  </div>
+  
+  <!-- BLOQUE 9-->
+  <div class="smartbox-card fade">
+    <div class="image"></div>
+
+    <h2>Viaje a Segovia</h2>
+    <p><em>Mucho mucho frio</em></p>
+
+    <ul>
+      <li>Una comida con interpretación inesperada</li>
+      <li>Nieve a la vuelta</li>
+      <li>Primer muñeco de nieve</li>
+      <li>Seguir descubriendo España juntos</li>
+    </ul>
+
+    <button onclick="goToPage(3)">RECUERDOS</button>
+  </div>
+  
+  <!-- BLOQUE 10-->
+  <div class="smartbox-card fade">
+    <div class="image"></div>
+
+    <h2>Viaje a Toledo</h2>
+    <p><em>Mucho mucho Calor</em></p>
+
+    <ul>
+      <li>Una comida con interpretación en la mesa</li>
+      <li>Espectaculos increibles</li>
+      <li>Una ciudad bonita</li>
+      <li>Un día perfecto con actuacion final increible</li>
+    </ul>
+
+    <button onclick="goToPage(3)">RECUERDOS</button>
+  </div>
+  
+  <!-- BLOQUE 11-->
+  <div class="smartbox-card fade">
+    <div class="image"></div>
+
+    <h2>Y muchos viajes más</h2>
+    <p><em>Los que hemos hecho y los que nos esperan</em></p>
+
+    <ul>
+      <li>Algunos largos</li>
+      <li>Otros cortos</li>
+      <li>Pero siempre juntos</li>
+      <li>En españa y fuera de España</li>
+    </ul>
+
+    <button onclick="goToPage(3)">RECUERDOS</button>
+  </div>
+  
+  
+  
+  <!-- BLOQUE -->
   <div class="smartbox-card fade">
     <div class="image"></div>
 
@@ -153,7 +318,7 @@
 
 <!-- PANTALLA 3 – MENSAJE FINAL -->
 <div class="page" id="page3">
-  <button class="back" onclick="goToPage(1)">← Volver</button>
+  <button class="back" onclick="goToPage(2)">← Volver</button>
   <div class="smartbox-card fade">
     <h2>Para toda la vida 🤍</h2>
 
