@@ -130,10 +130,10 @@
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-.abrir-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 14px 30px rgba(0,0,0,0.4);
-}
+    .abrir-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px rgba(0,0,0,0.4);
+    }
 
     .fade {
       animation: fadeIn 1.4s ease forwards;
@@ -143,6 +143,40 @@
       from { opacity: 0; transform: translateY(10px); }
       to { opacity: 1; transform: translateY(0); }
     }
+
+    /* Caja regalo */
+    .gift-box {
+      position: relative;
+      width: 120px;
+      height: 120px;
+      margin: auto;
+    }
+
+    .box-body {
+      width: 120px;
+      height: 80px;
+      background: gold;
+      border-radius: 8px;
+      position: absolute;
+      bottom: 0;
+    }
+
+    .lid {
+      width: 130px;
+      height: 40px;
+      background: #ffd700;
+      position: absolute;
+      top: 0;
+      left: -5px;
+      border-radius: 8px;
+      transform-origin: left bottom;
+      transition: transform 1s ease;
+    }
+
+    /* Animación de apertura */
+    .open .lid {
+      transform: rotate(-120deg);
+    }
   </style>
 </head>
 <body>
@@ -151,7 +185,15 @@
 <div class="page active" id="page1">
   <h1>Hay regalos que no se gastan</h1>
   <p>Este es uno de ellos.</p>
-  <button class="abrir-btn" onclick="goToPage(2)">Abrir mi regalo</button>
+  <button class="abrir-btn" onclick="openGift()">Abrir mi regalo</button>
+</div>
+  
+  <!-- PANTALLA 1.5 – ANIMACIÓN CAJA -->
+<div class="page" id="pageOpen">
+  <div class="gift-box" id="giftBox">
+    <div class="lid"></div>
+    <div class="box-body"></div>
+  </div>
 </div>
 
 <!-- PANTALLA 2 – SMARTBOX -->
@@ -393,6 +435,18 @@
   function goToPage(pageNumber) {
     document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
     document.getElementById('page' + pageNumber).classList.add('active');
+  }
+
+  function openGift() {
+    goToPage('Open');
+
+    setTimeout(() => {
+      document.getElementById('giftBox').classList.add('open');
+    }, 200);
+
+    setTimeout(() => {
+      goToPage(2);
+    }, 1600);
   }
 </script>
 
