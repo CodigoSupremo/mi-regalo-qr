@@ -44,6 +44,15 @@
       cursor: pointer;
     }
 
+    .back {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: transparent;
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.4);
+    }
+
     /* Smartbox style */
     .smartbox-card {
       max-width: 420px;
@@ -87,6 +96,8 @@
 
 <!-- PANTALLA 2 – SMARTBOX -->
 <div class="page" id="page2">
+  <button class="back" onclick="goToPage(1)">← Volver</button>
+  
   <!-- BLOQUE 1-->
   <div class="smartbox-card fade">
     <div class="image"></div>
@@ -142,6 +153,7 @@
 
 <!-- PANTALLA 3 – MENSAJE FINAL -->
 <div class="page" id="page3">
+  <button class="back" onclick="goToPage(1)">← Volver</button>
   <div class="smartbox-card fade">
     <h2>Para toda la vida 🤍</h2>
 
