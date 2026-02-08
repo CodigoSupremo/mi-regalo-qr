@@ -209,6 +209,30 @@
       transform: rotate(-120deg);
     }
 
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 40px;
+    }
+
+    .gallery-item {
+      width: 180px;
+      height: 120px;
+      border-radius: 12px;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.05);
+    }
+
   </style>
 </head>
 <body>
@@ -249,7 +273,7 @@
       <li>Dormir con ilusión de habernos conocido</li>
     </ul>
 
-    <button class="recuerdo-btn" onclick="goToPage(3)">RECUERDOS</button>
+    <button class="recuerdo-btn" onclick="goToPage(4)">RECUERDOS</button>
   </div>
   
   <!-- BLOQUE 2-->
@@ -266,7 +290,7 @@
       <li>Y todo en Campello, Valencia</li>
     </ul>
 
-    <button class="recuerdo-btn" onclick="goToPage(3)">RECUERDOS</button>
+    <button class="recuerdo-btn" onclick="goToPage(4)">RECUERDOS</button>
   </div>
     
   <!-- BLOQUE 3-->
@@ -283,7 +307,7 @@
       <li>Primer viaje de muchos</li>
     </ul>
 
-    <button class="recuerdo-btn" onclick="goToPage(3)">RECUERDOS</button>
+    <button class="recuerdo-btn" onclick="goToPage(4)">RECUERDOS</button>
   </div>
     
   <!-- BLOQUE 4-->
@@ -300,7 +324,7 @@
       <li>Empezar los años juntitos</li>
     </ul>
 
-    <button class="recuerdo-btn" onclick="goToPage(3)">RECUERDOS</button>
+    <button class="recuerdo-btn" onclick="goToPage(4)">RECUERDOS</button>
   </div>
   
   <!-- BLOQUE 5-->
@@ -317,7 +341,7 @@
       <li>Bromas en playas nudistas</li>
     </ul>
 
-    <button class="recuerdo-btn" onclick="goToPage(3)">RECUERDOS</button>
+    <button class="recuerdo-btn" onclick="goToPage(4)">RECUERDOS</button>
   </div>
   
   <!-- BLOQUE 6-->
@@ -334,7 +358,7 @@
       <li>Estrellas fugaces</li>
     </ul>
 
-    <button class="recuerdo-btn" onclick="goToPage(3)">RECUERDOS</button>
+    <button class="recuerdo-btn" onclick="goToPage(4)">RECUERDOS</button>
   </div>
   
   <!-- BLOQUE 7-->
@@ -351,7 +375,7 @@
       <li>Comimos muy bien.... como siempre</li>
     </ul>
 
-    <button class="recuerdo-btn" onclick="goToPage(3)">RECUERDOS</button>
+    <button class="recuerdo-btn" onclick="goToPage(4)">RECUERDOS</button>
   </div>
   
   <!-- BLOQUE 8-->
@@ -368,7 +392,7 @@
       <li>Una vuelta a casa llena de viajes</li>
     </ul>
 
-    <button class="recuerdo-btn" onclick="goToPage(3)">RECUERDOS</button>
+    <button class="recuerdo-btn" onclick="goToPage(4)">RECUERDOS</button>
   </div>
   
   <!-- BLOQUE 9-->
@@ -385,7 +409,7 @@
       <li>Seguir descubriendo España juntos</li>
     </ul>
 
-    <button class="recuerdo-btn" onclick="goToPage(3)">RECUERDOS</button>
+    <button class="recuerdo-btn" onclick="goToPage(4)">RECUERDOS</button>
   </div>
   
   <!-- BLOQUE 10-->
@@ -402,7 +426,7 @@
       <li>Un día perfecto con actuacion final increible</li>
     </ul>
 
-    <button class="recuerdo-btn" onclick="goToPage(3)">RECUERDOS</button>
+    <button class="recuerdo-btn" onclick="goToPage(4)">RECUERDOS</button>
   </div>
   
   <!-- BLOQUE 11-->
@@ -419,7 +443,7 @@
       <li>En españa y fuera de España</li>
     </ul>
 
-    <button class="recuerdo-btn" onclick="goToPage(3)">RECUERDOS</button>
+    <button class="recuerdo-btn" onclick="goToPage(4)">RECUERDOS</button>
   </div>
   
   
@@ -463,6 +487,16 @@
 
     <p><strong>Siempre contigo.</strong></p>
   </div>
+
+  <!-- PANTALLA 4 – RECUERDOS / GALERÍA -->
+  <div class="page" id="page4">
+    <button class="back" onclick="goToPage(2)">← Volver</button>
+
+    <div class="gallery">
+      <div class="gallery-item" style="background-image: url('images/foto1.jpg');"></div>
+    </div>
+  </div>
+  
 </div>
 
 <script>
