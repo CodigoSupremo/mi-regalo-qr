@@ -496,16 +496,26 @@
 
       for (let i = 0; i < 10; i++) {
         const heart = document.createElement("div");
-        heart.className = "heart";
-        heart.innerText = "❤️";
+     <script>
+  function goToPage(pageNumber) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById('page' + pageNumber).classList.add('active');
+  }
 
-        heart.style.left = (Math.random() * 60 - 30) + "px";
-        heart.style.animationDelay = (Math.random() * 0.4) + "s";
+  function createHearts() {
+    const heartsContainer = document.getElementById("hearts");
+    heartsContainer.innerHTML = "";
 
-        heartsContainer.appendChild(heart);
-      }
+    for (let i = 0; i < 10; i++) {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.innerText = "❤️";
+
+      heart.style.left = (Math.random() * 60 - 30) + "px";
+      heart.style.animationDelay = (Math.random() * 0.4) + "s";
+
+      heartsContainer.appendChild(heart);
     }
-
   }
 
   function openGift() {
