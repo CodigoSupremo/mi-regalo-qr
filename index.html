@@ -11,6 +11,7 @@
       color: #a00000;
       font-family: sans-serif;
       margin: 0;
+      overflow-x: hidden; /* bloquea el desplazamiento lateral */
     }
 
     body::before {
@@ -778,33 +779,32 @@ function openGift() {
   }, 1700);
 }
 
- // CARRUSEL DE FOTOS
-let currentIndex = 0;
-const items = document.querySelectorAll('.carousel-item');
+// CARRUSEL INDIVIDUAL POR CADA GALERÍA
+document.querySelectorAll('.carousel').forEach(carousel => {
+  let currentIndex = 0;
+  const track = carousel.querySelector('.carousel-track');
+  const items = carousel.querySelectorAll('.carousel-item');
 
-function showImage(index) {
-  const track = document.querySelector('.carousel-track');
-  const total = items.length;
+  function showImage(index) {
+    const total = items.length;
 
-  // Loop circular
-  if (index < 0) index = total - 1;
-  if (index >= total) index = 0;
+    if (index < 0) index = total - 1;
+    if (index >= total) index = 0;
 
-  currentIndex = index;
-  track.style.transform = `translateX(-${index * 100}%)`;
-}
+    currentIndex = index;
+    track.style.transform = `translateX(-${index * 100}%)`;
+  }
 
-// Funciones para las flechas
-function nextImage() {
-  showImage(currentIndex + 1);
-}
+  carousel.querySelector('.carousel-btn.left').onclick = () => {
+    showImage(currentIndex - 1);
+  };
 
-function prevImage() {
-  showImage(currentIndex - 1);
-}
+  carousel.querySelector('.carousel-btn.right').onclick = () => {
+    showImage(currentIndex + 1);
+  };
 
-// Inicializamos mostrando la primera imagen
-showImage(0);
+  showImage(0);
+});
   
 </script>
 
