@@ -485,54 +485,42 @@
 </div>
 
 <script>
-  function goToPage(pageNumber) {
-    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-    document.getElementById('page' + pageNumber).classList.add('active');
+function goToPage(pageNumber) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page' + pageNumber).classList.add('active');
+}
+
+function createHearts() {
+  const heartsContainer = document.getElementById("hearts");
+  heartsContainer.innerHTML = "";
+
+  for (let i = 0; i < 10; i++) {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerText = "❤️";
+
+    heart.style.left = (Math.random() * 60 - 30) + "px";
+    heart.style.animationDelay = (Math.random() * 0.4) + "s";
+
+    heartsContainer.appendChild(heart);
   }
+}
 
-    function createHearts() {
-      const heartsContainer = document.getElementById("hearts");
-      heartsContainer.innerHTML = "";
+function openGift() {
+  goToPage('Open');
 
-      for (let i = 0; i < 10; i++) {
-        const heart = document.createElement("div");
-     <script>
-  function goToPage(pageNumber) {
-    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-    document.getElementById('page' + pageNumber).classList.add('active');
-  }
+  const box = document.getElementById('giftBox');
+  box.classList.remove('open');
 
-  function createHearts() {
-    const heartsContainer = document.getElementById("hearts");
-    heartsContainer.innerHTML = "";
+  setTimeout(() => {
+    box.classList.add('open');
+    createHearts();
+  }, 200);
 
-    for (let i = 0; i < 10; i++) {
-      const heart = document.createElement("div");
-      heart.className = "heart";
-      heart.innerText = "❤️";
-
-      heart.style.left = (Math.random() * 60 - 30) + "px";
-      heart.style.animationDelay = (Math.random() * 0.4) + "s";
-
-      heartsContainer.appendChild(heart);
-    }
-  }
-
-  function openGift() {
-    goToPage('Open');
-
-    const box = document.getElementById('giftBox');
-    box.classList.remove('open'); // reset
-
-    setTimeout(() => {
-      box.classList.add('open');
-      createHearts();
-    }, 200);
-
-    setTimeout(() => {
-      goToPage(2);
-    }, 1700);
-  }
+  setTimeout(() => {
+    goToPage(2);
+  }, 1700);
+}
 </script>
 
 </body>
