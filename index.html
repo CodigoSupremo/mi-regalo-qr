@@ -11,7 +11,6 @@
       color: #a00000;
       font-family: sans-serif;
       margin: 0;
-      overflow-x: hidden;
     }
 
     body::before {
@@ -31,11 +30,10 @@
       width: 200%;
       height: 200%;
       font-size: 70px;
-      opacity: 0.12;
+      opacity: 0.12; /* más visibles */
       line-height: 140px;
       transform: rotate(-20deg);
       pointer-events: none;
-      z-index: 0; /* Corazones detrás */
     }
 
     .page {
@@ -45,7 +43,6 @@
       box-sizing: border-box;
       text-align: center;
       position: relative;
-      z-index: 1;
     }
 
     .active {
@@ -59,6 +56,7 @@
       letter-spacing: 1px;
     }
 
+    /* Botón principal */
     button {
       margin-top: 20px;
       padding: 12px 26px;
@@ -69,7 +67,6 @@
       font-size: 14px;
       cursor: pointer;
       font-weight: bold;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     button:hover {
@@ -77,6 +74,7 @@
       box-shadow: 0 8px 18px rgba(0,0,0,0.2);
     }
 
+    /* Botón volver */
     .back {
       position: fixed;
       top: 20px;
@@ -90,6 +88,7 @@
       z-index: 10;
     }
 
+    /* Tarjeta estilo Smartbox */
     .smartbox-card {
       max-width: 420px;
       width: 100%;
@@ -98,21 +97,17 @@
       padding: 25px;
       box-shadow: 0 0 30px rgba(0,0,0,0.25);
       backdrop-filter: blur(6px);
-      margin-bottom: 30px;
-      z-index: 1;
+      margin-bottom: 30px; /* espacio entre tarjetas */
     }
 
     .image {
       width: 100%;
       height: 220px;
       border-radius: 18px;
-      background-size: cover;
-      background-position: center;
+      background-size: cover;      /* La imagen cubre todo el div */
+      background-position: center; /* Centrada */
       background-repeat: no-repeat;
       margin-bottom: 20px;
-      flex-shrink: 0;
-      position: relative;
-      z-index: 1;
     }
 
     ul {
@@ -120,6 +115,7 @@
       padding-left: 20px;
     }
 
+    /* Botón recuerdos */
     .recuerdo-btn {
       background: #a00000;
       color: #ffffff;
@@ -127,6 +123,7 @@
       padding: 10px 22px;
     }
 
+    /* Botón experiencia final */
     .final-btn {
       background: #c40000;
       color: white;
@@ -135,6 +132,7 @@
       font-size: 15px;
     }
 
+    /* Botón abrir regalo (principal) */
     .abrir-btn {
       background: #c40000;
       color: white;
@@ -143,6 +141,7 @@
       border-radius: 50px;
       font-weight: bold;
       box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     .abrir-btn:hover {
@@ -159,6 +158,7 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
+    /* Caja regalo */
     .gift-box {
       position: relative;
       width: 140px;
@@ -166,15 +166,17 @@
       margin: auto;
     }
 
+    /* Cuerpo de la caja */
     .box-body {
       width: 140px;
       height: 90px;
-      background: #d8b7ff;
+      background: #d8b7ff; /* violeta pastel */
       border-radius: 10px;
       position: absolute;
       bottom: 0;
     }
 
+    /* Cinta vertical */
     .box-body::before {
       content: "";
       position: absolute;
@@ -182,13 +184,14 @@
       transform: translateX(-50%);
       width: 20px;
       height: 100%;
-      background: #a76cff;
+      background: #a76cff; /* violeta un poco más oscuro para la cinta */
     }
 
+    /* Tapa */
     .lid {
       width: 150px;
       height: 45px;
-      background: #d8b7ff;
+      background: #d8b7ff; /* mismo violeta pastel que la caja */
       position: absolute;
       top: 0;
       left: -5px;
@@ -197,6 +200,7 @@
       transition: transform 1s ease;
     }
 
+    /* Cinta en la tapa */
     .lid::before {
       content: "";
       position: absolute;
@@ -204,9 +208,10 @@
       transform: translateX(-50%);
       width: 20px;
       height: 100%;
-      background: #a76cff;
+      background: #a76cff; /* misma tonalidad de cinta */
     }
 
+    /* Lazo arriba de la tapa */
     .lid::after {
       content: "";
       position: absolute;
@@ -219,6 +224,7 @@
       border-radius: 15px 15px 0 0;
     }
 
+    /* animación de apertura */
     .open .lid {
       transform: rotate(-120deg);
     }
@@ -230,26 +236,20 @@
       position: relative;
       width: 100%;
       max-width: 600px;
-      height: 400px;
       margin: 50px auto;
-      overflow: hidden;
-      z-index: 1;
     }
 
     .carousel-track {
       display: flex;
-      height: 100%;
+      width: 100%;
       transition: transform 0.5s ease;
     }
 
     .carousel-item {
-      flex: 0 0 100%;
-      height: 100%;
+      flex: 0 0 100%; /* ¡Cada foto ocupa todo el ancho del contenedor! */
+      height: 400px;
       background-size: cover;
       background-position: center;
-      background-repeat: no-repeat;
-      position: relative;
-      z-index: 1;
     }
 
     .carousel-btn {
@@ -266,9 +266,10 @@
       border-radius: 8px;
     }
 
-    .carousel-btn.left { left: 10px; }
-    .carousel-btn.right { right: 10px; }
+    .carousel-btn.left { left: -50px; }
+    .carousel-btn.right { right: -50px; }
 
+    /* Solo las páginas con esta clase tendrán scroll */
     .page.scrollable {
       height: 100vh;
       overflow-y: auto;
@@ -286,11 +287,12 @@
   <button class="abrir-btn" onclick="openGift()">Abrir mi regalo</button>
 </div>
   
-<!-- PANTALLA 1.5 – ANIMACIÓN CAJA -->
+  <!-- PANTALLA 1.5 – ANIMACIÓN CAJA -->
 <div class="page" id="pageOpen">
   <div class="gift-box" id="giftBox">
     <div class="lid"></div>
-    <div class="box-body" id="boxBody"></div>
+    <div class="box-body" id="boxBody">
+    </div>
   </div>
 </div>
 
@@ -298,37 +300,213 @@
 <div class="page scrollable" id="page2">
   <button class="back" onclick="goToPage(1)">← Volver</button>
 
-  <!-- Aquí van tus 11 smartbox-card (igual que en tu HTML) -->
-  <!-- BLOQUE 1 -->
+  
+  <!-- BLOQUE 1-->
   <div class="smartbox-card fade">
     <div class="image" style="background-image: url('images/PC1.jpg');"></div>
+
     <h2>Primera cita</h2>
     <p><em>Experiencia de conocernos</em></p>
+
     <ul>
       <li>Elegimos quedar ese día</li>
-      <li>Ver lo bonito que éramos</li>
+      <li>Ver lo bonito que eramos</li>
       <li>Hablar con una cerveza</li>
       <li>Un beso robado en el paso de cebra</li>
       <li>Dormir con ilusión de habernos conocido</li>
     </ul>
+
     <button class="recuerdo-btn" onclick="goToPage(4)">RECUERDOS</button>
   </div>
-
-  <!-- BLOQUE 2 -->
+  
+  <!-- BLOQUE 2-->
   <div class="smartbox-card fade">
     <div class="image" style="background-image: url('images/DA1.jpg');"></div>
+
     <h2>Declaración de amor</h2>
     <p><em>Experiencia con fecha 30 de julio de 2023</em></p>
+
     <ul>
-      <li>Declaramos cada uno lo que sentíamos</li>
+      <li>Declaramos cada uno lo que sentiamos</li>
       <li>Los dos aceptamos ser novios</li>
       <li>Una habitación llena de rojo y velas</li>
       <li>Y todo en Campello, Valencia</li>
     </ul>
+
     <button class="recuerdo-btn" onclick="goToPage(5)">RECUERDOS</button>
   </div>
+    
+  <!-- BLOQUE 3-->
+  <div class="smartbox-card fade">
+    <div class="image" style="background-image: url('images/CAMP1.jpg');"></div>
 
-  <!-- BLOQUES 3 a 11 iguales, con tus imágenes y texto -->
+    <h2>Primer viaje, Campello</h2>
+    <p><em>Donde ya estaba todo claro</em></p>
+
+    <ul>
+      <li>Ir con ganas y volver juntos</li>
+      <li>Bromas que recordaremos siempre</li>
+      <li>Primeros baños juntos</li>
+      <li>Primer viaje de muchos</li>
+    </ul>
+
+    <button class="recuerdo-btn" onclick="goToPage(6)">RECUERDOS</button>
+  </div>
+    
+  <!-- BLOQUE 4-->
+  <div class="smartbox-card fade">
+    <div class="image" style="background-image: url('images/NAV1.jpg');"></div>
+
+    <h2>Navidades</h2>
+    <p><em>Donde la ilusion siempre está</em></p>
+
+    <ul>
+      <li>Organizandonos para pasarlas juntos</li>
+      <li>Regalos inesperados</li>
+      <li>Regalos con ilusión</li>
+      <li>Empezar los años juntitos</li>
+    </ul>
+
+    <button class="recuerdo-btn" onclick="goToPage(7)">RECUERDOS</button>
+  </div>
+  
+  <!-- BLOQUE 5-->
+  <div class="smartbox-card fade">
+    <div class="image" style="background-image: url('images/ROQ1.jpg');"></div>
+
+    <h2>Viaje a Roquetas del Mar</h2>
+    <p><em>Otro viajecito a la playa</em></p>
+
+    <ul>
+      <li>Seguir sumando momentos</li>
+      <li>Mas baños en la playa</li>
+      <li>Experiencias como kayak o snorkel</li>
+      <li>Bromas en playas nudistas</li>
+    </ul>
+
+    <button class="recuerdo-btn" onclick="goToPage(8)">RECUERDOS</button>
+  </div>
+  
+  <!-- BLOQUE 6-->
+  <div class="smartbox-card fade">
+    <div class="image" style="background-image: url('images/CULL1.jpg');"></div>
+
+    <h2>Viaje a Cullera</h2>
+    <p><em>Más playa</em></p>
+
+    <ul>
+      <li>Cenas con vino</li>
+      <li>Arroz con bogabante, como costumbre</li>
+      <li>Cenas de marisco</li>
+      <li>Estrellas fugaces</li>
+    </ul>
+
+    <button class="recuerdo-btn" onclick="goToPage(9)">RECUERDOS</button>
+  </div>
+  
+  <!-- BLOQUE 7-->
+  <div class="smartbox-card fade">
+    <div class="image" style="background-image: url('images/avila1.jpg');"></div>
+
+    <h2>Viaje a Avila</h2>
+    <p><em>Mucho frio</em></p>
+
+    <ul>
+      <li>Viajes de un finde</li>
+      <li>No nos hace falta nada más que nosotros</li>
+      <li>Nos acechava el "Maligno"</li>
+      <li>Comimos muy bien.... como siempre</li>
+    </ul>
+
+    <button class="recuerdo-btn" onclick="goToPage(10)">RECUERDOS</button>
+  </div>
+  
+  <!-- BLOQUE 8-->
+  <div class="smartbox-card fade">
+    <div class="image" style="background-image: url('images/SIG1.jpg');"></div>
+
+    <h2>Viaje a Siguenza</h2>
+    <p><em>Mucha agua</em></p>
+
+    <ul>
+      <li>Viajes de un finde, otra vez</li>
+      <li>Una procesion diferente</li>
+      <li>Lavanda que no es lavanda</li>
+      <li>Una vuelta a casa llena de viajes</li>
+    </ul>
+
+    <button class="recuerdo-btn" onclick="goToPage(11)">RECUERDOS</button>
+  </div>
+  
+  <!-- BLOQUE 9-->
+  <div class="smartbox-card fade">
+    <div class="image" style="background-image: url('images/SEG1.jpg');"></div>
+
+    <h2>Viaje a Segovia</h2>
+    <p><em>Mucho mucho frio</em></p>
+
+    <ul>
+      <li>Una comida con interpretación inesperada</li>
+      <li>Nieve a la vuelta</li>
+      <li>Primer muñeco de nieve</li>
+      <li>Seguir descubriendo España juntos</li>
+    </ul>
+
+    <button class="recuerdo-btn" onclick="goToPage(12)">RECUERDOS</button>
+  </div>
+  
+  <!-- BLOQUE 10-->
+  <div class="smartbox-card fade">
+    <div class="image" style="background-image: url('images/TOL1.jpg');"></div>
+
+    <h2>Viaje a Toledo</h2>
+    <p><em>Mucho mucho Calor</em></p>
+
+    <ul>
+      <li>Una comida con interpretación en la mesa</li>
+      <li>Espectaculos increibles</li>
+      <li>Una ciudad bonita</li>
+      <li>Un día perfecto con actuacion final increible</li>
+    </ul>
+
+    <button class="recuerdo-btn" onclick="goToPage(13)">RECUERDOS</button>
+  </div>
+  
+  <!-- BLOQUE 11-->
+  <div class="smartbox-card fade">
+    <div class="image" style="background-image: url('images/VIAJE1.jpg');"></div>
+
+    <h2>Y muchos viajes más</h2>
+    <p><em>Los que hemos hecho y los que nos esperan</em></p>
+
+    <ul>
+      <li>Algunos largos</li>
+      <li>Otros cortos</li>
+      <li>Pero siempre juntos</li>
+      <li>En españa y fuera de España</li>
+    </ul>
+
+    <button class="recuerdo-btn" onclick="goToPage(14)">RECUERDOS</button>
+  </div>
+  
+  
+  
+  <!-- BLOQUE FINAL-->
+  <div class="smartbox-card fade">
+    <div class="image" style="background-image: url('images/foto0.jpg');"></div>
+
+    <h2>Una vida contigo</h2>
+    <p><em>Experiencia sin fecha de caducidad</em></p>
+
+    <ul>
+      <li>Elegirnos cada día</li>
+      <li>Reírnos incluso en los días malos</li>
+      <li>Cuidarnos sin condiciones</li>
+      <li>Construir un “nosotros” real</li>
+    </ul>
+
+    <button class="final-btn" onclick="goToPage(3)">Descubrir experiencia 🤍</button>
+  </div>
 </div>
 
 <!-- PANTALLA 3 – MENSAJE FINAL -->
@@ -336,13 +514,248 @@
   <button class="back" onclick="goToPage(2)">← Volver</button>
   <div class="smartbox-card fade">
     <h2>Para toda la vida ❤️</h2>
-    <p>Este regalo no se puede cambiar,<br>no se devuelve<br>y no se agota.</p>
-    <p>Es mi forma de decirte<br>que te elijo hoy,<br>mañana<br>y cuando no sea fácil.</p>
+
+    <p>
+      Este regalo no se puede cambiar,<br>
+      no se devuelve<br>
+      y no se agota.
+    </p>
+
+    <p>
+      Es mi forma de decirte<br>
+      que te elijo hoy,<br>
+      mañana<br>
+      y cuando no sea fácil.
+    </p>
+
     <p><strong>Siempre contigo.</strong></p>
   </div>
 </div>
 
-<!-- PANTALLAS 4 a 14 con carrusel (igual que tu HTML) -->
+<!-- PANTALLA 4 – Primera cita -->
+<div class="page" id="page4">
+  <button class="back" onclick="goToPage(2)">← Volver</button>
+  
+  <!-- Título fijo -->
+  <h2 style="margin: 60px 0 20px 0; color: #a00000;">PRIMERA CITA</h2>
+
+  <div class="carousel">
+    <button class="carousel-btn left" onclick="prevImage()">◀</button>
+
+    <div class="carousel-track">
+      <div class="carousel-item" style="background-image: url('images/PC1.jpg');"></div>
+      <div class="carousel-item" style="background-image: url('images/PC2.jpg');"></div>
+      <div class="carousel-item" style="background-image: url('images/PC3.jpg');"></div>
+    </div>
+
+    <button class="carousel-btn right" onclick="nextImage()">▶</button>
+  </div>
+</div>
+
+<!-- PANTALLA 5 – DECLARACIÓN DE AMOR -->
+<div class="page" id="page5">
+  <button class="back" onclick="goToPage(2)">← Volver</button>
+  
+  <!-- Título fijo -->
+  <h2 style="margin: 60px 0 20px 0; color: #a00000;">DECLARACION DE AMOR</h2>
+
+  <div class="carousel">
+    <button class="carousel-btn left" onclick="prevImage()">◀</button>
+
+    <div class="carousel-track">
+      <div class="carousel-item" style="background-image: url('images/DA1.jpg');"></div>
+      <div class="carousel-item" style="background-image: url('images/DA2.jpg');"></div>
+      <div class="carousel-item" style="background-image: url('images/DA3.jpg');"></div>
+      <div class="carousel-item" style="background-image: url('images/DA4.jpg');"></div>
+    </div>
+
+    <button class="carousel-btn right" onclick="nextImage()">▶</button>
+  </div>
+</div>
+
+<!-- PANTALLA 6 – CAMPELLO -->
+<div class="page" id="page6">
+  <button class="back" onclick="goToPage(2)">← Volver</button>
+  
+  <!-- Título fijo -->
+  <h2 style="margin: 60px 0 20px 0; color: #a00000;">CAMPELLO</h2>
+
+  <div class="carousel">
+    <button class="carousel-btn left" onclick="prevImage()">◀</button>
+
+    <div class="carousel-track">
+      <div class="carousel-item" style="background-image: url('images/CAMP1.jpg');"></div>
+      <div class="carousel-item" style="background-image: url('images/CAMP2.jpg');"></div>
+      <div class="carousel-item" style="background-image: url('images/CAMP3.jpg');"></div>
+    </div>
+
+    <button class="carousel-btn right" onclick="nextImage()">▶</button>
+  </div>
+</div>
+
+<!-- PANTALLA 7 – NAVIDADES -->
+<div class="page" id="page7">
+  <button class="back" onclick="goToPage(2)">← Volver</button>
+  
+  <!-- Título fijo -->
+  <h2 style="margin: 60px 0 20px 0; color: #a00000;">NAVIDADES</h2>
+
+  <div class="carousel">
+    <button class="carousel-btn left" onclick="prevImage()">◀</button>
+
+    <div class="carousel-track">
+      <div class="carousel-item" style="background-image: url('images/NAV1.jpg');"></div>
+      <div class="carousel-item" style="background-image: url('images/NAV2.jpg');"></div>
+    </div>
+
+    <button class="carousel-btn right" onclick="nextImage()">▶</button>
+  </div>
+</div>
+
+<!-- PANTALLA 8 – ROQUETAS DEL MAR -->
+<div class="page" id="page8">
+  <button class="back" onclick="goToPage(2)">← Volver</button>
+  
+  <!-- Título fijo -->
+  <h2 style="margin: 60px 0 20px 0; color: #a00000;">ROQUETAS DEL MAR</h2>
+
+  <div class="carousel">
+    <button class="carousel-btn left" onclick="prevImage()">◀</button>
+
+    <div class="carousel-track">
+      <div class="carousel-item" style="background-image: url('images/ROQ1.jpg');"></div>
+      <div class="carousel-item" style="background-image: url('images/ROQ2.jpg');"></div>
+      <div class="carousel-item" style="background-image: url('images/ROQ3.jpg');"></div>
+    </div>
+
+    <button class="carousel-btn right" onclick="nextImage()">▶</button>
+  </div>
+</div>
+
+<!-- PANTALLA 9 – CULLERA -->
+<div class="page" id="page9">
+  <button class="back" onclick="goToPage(2)">← Volver</button>
+  
+  <!-- Título fijo -->
+  <h2 style="margin: 60px 0 20px 0; color: #a00000;">CULLERA</h2>
+
+  <div class="carousel">
+    <button class="carousel-btn left" onclick="prevImage()">◀</button>
+
+    <div class="carousel-track">
+      <div class="carousel-item" style="background-image: url('images/CULL1.jpg');"></div>
+      <div class="carousel-item" style="background-image: url('images/CULL2.jpg');"></div>
+      <div class="carousel-item" style="background-image: url('images/CULL3.jpg');"></div>
+    </div>
+
+    <button class="carousel-btn right" onclick="nextImage()">▶</button>
+  </div>
+</div>
+
+<!-- PANTALLA 10 – AVILA -->
+<div class="page" id="page10">
+  <button class="back" onclick="goToPage(2)">← Volver</button>
+  
+  <!-- Título fijo -->
+  <h2 style="margin: 60px 0 20px 0; color: #a00000;">AVILA</h2>
+
+  <div class="carousel">
+    <button class="carousel-btn left" onclick="prevImage()">◀</button>
+
+    <div class="carousel-track">
+      <div class="carousel-item" style="background-image: url('images/avila1.jpg');"></div>
+      <div class="carousel-item" style="background-image: url('images/avila2.jpg');"></div>
+      <div class="carousel-item" style="background-image: url('images/avila3.jpg');"></div>
+    </div>
+
+    <button class="carousel-btn right" onclick="nextImage()">▶</button>
+  </div>
+</div>
+
+<!-- PANTALLA 11 – SIGUENZA -->
+<div class="page" id="page11">
+  <button class="back" onclick="goToPage(2)">← Volver</button>
+  
+  <!-- Título fijo -->
+  <h2 style="margin: 60px 0 20px 0; color: #a00000;">SIGUENZA</h2>
+
+  <div class="carousel">
+    <button class="carousel-btn left" onclick="prevImage()">◀</button>
+
+    <div class="carousel-track">
+      <div class="carousel-item" style="background-image: url('images/SIG1.jpg');"></div>
+      <div class="carousel-item" style="background-image: url('images/SIG2.jpg');"></div>
+      <div class="carousel-item" style="background-image: url('images/SIG3.jpg');"></div>
+    </div>
+
+    <button class="carousel-btn right" onclick="nextImage()">▶</button>
+  </div>
+</div>
+
+<!-- PANTALLA 12 – SEGOVIA -->
+<div class="page" id="page12">
+  <button class="back" onclick="goToPage(2)">← Volver</button>
+  
+  <!-- Título fijo -->
+  <h2 style="margin: 60px 0 20px 0; color: #a00000;">SEGOVIA</h2>
+
+  <div class="carousel">
+    <button class="carousel-btn left" onclick="prevImage()">◀</button>
+
+    <div class="carousel-track">
+      <div class="carousel-item" style="background-image: url('images/SEG1.jpg');"></div>
+      <div class="carousel-item" style="background-image: url('images/SEG2.jpg');"></div>
+      <div class="carousel-item" style="background-image: url('images/SEG3.jpg');"></div>
+    </div>
+
+    <button class="carousel-btn right" onclick="nextImage()">▶</button>
+  </div>
+</div>
+
+<!-- PANTALLA 13 – TOLEDO -->
+<div class="page" id="page13">
+  <button class="back" onclick="goToPage(2)">← Volver</button>
+  
+  <!-- Título fijo -->
+  <h2 style="margin: 60px 0 20px 0; color: #a00000;">TOLEDO</h2>
+
+  <div class="carousel">
+    <button class="carousel-btn left" onclick="prevImage()">◀</button>
+
+    <div class="carousel-track">
+      <div class="carousel-item" style="background-image: url('images/TOL1.jpg');"></div>
+      <div class="carousel-item" style="background-image: url('images/TOL2.jpg');"></div>
+      <div class="carousel-item" style="background-image: url('images/TOL3.jpg');"></div>
+    </div>
+
+    <button class="carousel-btn right" onclick="nextImage()">▶</button>
+  </div>
+</div>
+
+<!-- PANTALLA 14 – MÁS VIAJES -->
+<div class="page" id="page14">
+  <button class="back" onclick="goToPage(2)">← Volver</button>
+  
+  <!-- Título fijo -->
+  <h2 style="margin: 60px 0 20px 0; color: #a00000;">MÁS VIAJES</h2>
+
+  <div class="carousel">
+    <button class="carousel-btn left" onclick="prevImage()">◀</button>
+
+    <div class="carousel-track">
+      <div class="carousel-item" style="background-image: url('images/VIAJE1.jpg');"></div>
+      <div class="carousel-item" style="background-image: url('images/VIAJE2.jpg');"></div>
+      <div class="carousel-item" style="background-image: url('images/VIAJE3.jpg');"></div>
+      <div class="carousel-item" style="background-image: url('images/VIAJE4.jpg');"></div>
+      <div class="carousel-item" style="background-image: url('images/VIAJE5.jpg');"></div>
+      <div class="carousel-item" style="background-image: url('images/VIAJE6.jpg');"></div>
+      <div class="carousel-item" style="background-image: url('images/VIAJE7.jpg');"></div>
+    </div>
+
+    <button class="carousel-btn right" onclick="nextImage()">▶</button>
+  </div>
+</div>
+
 
 <script>
 function goToPage(pageNumber) {
@@ -351,36 +764,48 @@ function goToPage(pageNumber) {
 }
 
 function openGift() {
-  goToPage('Open'); 
+  goToPage('Open');
+
   const box = document.getElementById('giftBox');
   box.classList.remove('open');
-  setTimeout(() => box.classList.add('open'), 200);
-  setTimeout(() => goToPage(2), 1700);
+
+  setTimeout(() => {
+    box.classList.add('open');
+  }, 200);
+
+  setTimeout(() => {
+    goToPage(2);
+  }, 1700);
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-  document.querySelectorAll('.carousel').forEach(carousel => {
-    let currentIndex = 0;
-    const track = carousel.querySelector('.carousel-track');
-    const items = carousel.querySelectorAll('.carousel-item');
+ // CARRUSEL DE FOTOS
+let currentIndex = 0;
+const items = document.querySelectorAll('.carousel-item');
 
-    function showImage(index) {
-      const total = items.length;
-      if (index < 0) index = total - 1;
-      if (index >= total) index = 0;
-      currentIndex = index;
-      track.style.transform = `translateX(-${index * 100}%)`;
-    }
+function showImage(index) {
+  const track = document.querySelector('.carousel-track');
+  const total = items.length;
 
-    const btnLeft = carousel.querySelector('.carousel-btn.left');
-    const btnRight = carousel.querySelector('.carousel-btn.right');
+  // Loop circular
+  if (index < 0) index = total - 1;
+  if (index >= total) index = 0;
 
-    if (btnLeft) btnLeft.addEventListener('click', () => showImage(currentIndex - 1));
-    if (btnRight) btnRight.addEventListener('click', () => showImage(currentIndex + 1));
+  currentIndex = index;
+  track.style.transform = `translateX(-${index * 100}%)`;
+}
 
-    showImage(0);
-  });
-});
+// Funciones para las flechas
+function nextImage() {
+  showImage(currentIndex + 1);
+}
+
+function prevImage() {
+  showImage(currentIndex - 1);
+}
+
+// Inicializamos mostrando la primera imagen
+showImage(0);
+  
 </script>
 
 </body>
