@@ -22,8 +22,8 @@
       left: 0;
       width: 200%;
       height: 200%;
-      font-size: 60px;
-      opacity: 0.07;
+      font-size: 80px;
+      opacity: 0.15;
       line-height: 120px;
       transform: rotate(-20deg);
       pointer-events: none;
@@ -147,35 +147,84 @@
     /* Caja regalo */
     .gift-box {
       position: relative;
-      width: 120px;
-      height: 120px;
+      width: 140px;
+      height: 140px;
       margin: auto;
     }
 
     .box-body {
-      width: 120px;
-      height: 80px;
+      width: 140px;
+      height: 90px;
       background: gold;
-      border-radius: 8px;
+      border-radius: 10px;
       position: absolute;
       bottom: 0;
     }
 
+    /* cinta vertical */
+    .box-body::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 20px;
+      height: 100%;
+      background: crimson;
+    }
+
+    /* tapa */
     .lid {
-      width: 130px;
-      height: 40px;
-      background: #ffd700;
+      width: 150px;
+      height: 45px;
+      background: gold;
       position: absolute;
       top: 0;
       left: -5px;
-      border-radius: 8px;
+      border-radius: 10px;
       transform-origin: left bottom;
       transition: transform 1s ease;
     }
 
-    /* Animación de apertura */
+    /* cinta en la tapa */
+    .lid::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 20px;
+      height: 100%;
+      background: crimson;
+    }
+
+    /* animación de apertura */
     .open .lid {
       transform: rotate(-120deg);
+    }
+
+    /* corazones al abrir */
+    .hearts {
+      position: absolute;
+      bottom: 80px;
+      left: 50%;
+      transform: translateX(-50%);
+      pointer-events: none;
+    }
+
+    .heart {
+      position: absolute;
+      font-size: 24px;
+      animation: floatUp 1.5s ease forwards;
+    }
+
+    @keyframes floatUp {
+      from {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+      to {
+        opacity: 0;
+        transform: translateY(-120px) scale(1.5);
+      }
     }
   </style>
 </head>
@@ -193,6 +242,7 @@
   <div class="gift-box" id="giftBox">
     <div class="lid"></div>
     <div class="box-body"></div>
+    <div class="hearts" id="hearts"></div>
   </div>
 </div>
 
@@ -229,7 +279,7 @@
       <li>Declaramos cada uno lo que sentiamos</li>
       <li>Los dos aceptamos ser novios</li>
       <li>Una habitación llena de rojo y velas</li>
-      <li>Y todo en Cmpello, Valencia</li>
+      <li>Y todo en Campello, Valencia</li>
     </ul>
 
     <button class="recuerdo-btn" onclick="goToPage(3)">RECUERDOS</button>
@@ -263,7 +313,7 @@
       <li>Organizandonos para pasarlas juntos</li>
       <li>Regalos inesperados</li>
       <li>Regalos con ilusion</li>
-      <li>Empezar elos años juntitos</li>
+      <li>Empezar los años juntitos</li>
     </ul>
 
     <button class="recuerdo-btn" onclick="goToPage(3)">RECUERDOS</button>
@@ -291,7 +341,7 @@
     <div class="image"></div>
 
     <h2>Viaje a Cullera</h2>
-    <p><em>Mas playa</em></p>
+    <p><em>Más playa</em></p>
 
     <ul>
       <li>Cenas con vino</li>
@@ -437,16 +487,34 @@
     document.getElementById('page' + pageNumber).classList.add('active');
   }
 
+  function createHearts() {
+    const heartsContainer = document.getElementById("hearts");
+    heartsContainer.innerHTML = "";
+
+    for (let i = 0; i < 8; i++) {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.innerText = "❤️";
+      heart.style.left = (Math.random() * 80 - 40) + "px";
+      heart.style.animationDelay = (Math.random() * 0.4) + "s";
+      heartsContainer.appendChild(heart);
+    }
+  }
+
   function openGift() {
     goToPage('Open');
 
+    const box = document.getElementById('giftBox');
+    box.classList.remove('open'); // reset
+
     setTimeout(() => {
-      document.getElementById('giftBox').classList.add('open');
+      box.classList.add('open');
+      createHearts();
     }, 200);
 
     setTimeout(() => {
       goToPage(2);
-    }, 1600);
+    }, 1700);
   }
 </script>
 
