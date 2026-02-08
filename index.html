@@ -160,16 +160,17 @@
       margin: auto;
     }
 
+    /* Cuerpo de la caja */
     .box-body {
       width: 140px;
       height: 90px;
-      background: gold;
+      background: #d8b7ff; /* violeta pastel */
       border-radius: 10px;
       position: absolute;
       bottom: 0;
     }
 
-    /* cinta vertical */
+    /* Cinta vertical */
     .box-body::before {
       content: "";
       position: absolute;
@@ -177,14 +178,14 @@
       transform: translateX(-50%);
       width: 20px;
       height: 100%;
-      background: crimson;
+      background: #a76cff; /* violeta un poco más oscuro para la cinta */
     }
 
-    /* tapa */
+    /* Tapa */
     .lid {
       width: 150px;
       height: 45px;
-      background: gold;
+      background: #d8b7ff; /* mismo violeta pastel que la caja */
       position: absolute;
       top: 0;
       left: -5px;
@@ -193,7 +194,7 @@
       transition: transform 1s ease;
     }
 
-    /* cinta en la tapa */
+    /* Cinta en la tapa */
     .lid::before {
       content: "";
       position: absolute;
@@ -201,7 +202,20 @@
       transform: translateX(-50%);
       width: 20px;
       height: 100%;
-      background: crimson;
+      background: #a76cff; /* misma tonalidad de cinta */
+    }
+
+    /* Lazo arriba de la tapa */
+    .lid::after {
+      content: "";
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 30px;
+      height: 15px;
+      background: #a76cff;
+      border-radius: 15px 15px 0 0;
     }
 
     /* animación de apertura */
