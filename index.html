@@ -237,11 +237,13 @@
       width: 100%;
       max-width: 600px;
       margin: 50px auto;
+      overflow: hidden; /* bloquea el deslizamiento manual */
     }
 
     .carousel-track {
       display: flex;
       width: 100%;
+      overflow: hidden; /* evita scroll lateral */
       transition: transform 0.5s ease;
     }
 
@@ -544,7 +546,7 @@
   <h2 style="margin: 60px 0 20px 0; color: #a00000;">PRIMERA CITA</h2>
 
   <div class="carousel">
-    <button class="carousel-btn left" onclick="prevImage()">◀</button>
+    <button class="carousel-btn left" onclick="prevImage(this)">◀</button>
 
     <div class="carousel-track">
       <div class="carousel-item" style="background-image: url('images/PC1.jpg');"></div>
@@ -552,7 +554,7 @@
       <div class="carousel-item" style="background-image: url('images/PC3.jpg');"></div>
     </div>
 
-    <button class="carousel-btn right" onclick="nextImage()">▶</button>
+    <button class="carousel-btn right" onclick="nextImage(this)">▶</button>
   </div>
 </div>
 
@@ -564,7 +566,7 @@
   <h2 style="margin: 60px 0 20px 0; color: #a00000;">DECLARACION DE AMOR</h2>
 
   <div class="carousel">
-    <button class="carousel-btn left" onclick="prevImage()">◀</button>
+    <button class="carousel-btn left" onclick="prevImage(this)">◀</button>
 
     <div class="carousel-track">
       <div class="carousel-item" style="background-image: url('images/DA1.jpg');"></div>
@@ -573,7 +575,7 @@
       <div class="carousel-item" style="background-image: url('images/DA4.jpg');"></div>
     </div>
 
-    <button class="carousel-btn right" onclick="nextImage()">▶</button>
+    <button class="carousel-btn right" onclick="nextImage(this)">▶</button>
   </div>
 </div>
 
@@ -585,7 +587,7 @@
   <h2 style="margin: 60px 0 20px 0; color: #a00000;">CAMPELLO</h2>
 
   <div class="carousel">
-    <button class="carousel-btn left" onclick="prevImage()">◀</button>
+    <button class="carousel-btn left" onclick="prevImage(this)">◀</button>
 
     <div class="carousel-track">
       <div class="carousel-item" style="background-image: url('images/CAMP1.jpg');"></div>
@@ -593,7 +595,7 @@
       <div class="carousel-item" style="background-image: url('images/CAMP3.jpg');"></div>
     </div>
 
-    <button class="carousel-btn right" onclick="nextImage()">▶</button>
+    <button class="carousel-btn right" onclick="nextImage(this)">▶</button>
   </div>
 </div>
 
@@ -605,14 +607,14 @@
   <h2 style="margin: 60px 0 20px 0; color: #a00000;">NAVIDADES</h2>
 
   <div class="carousel">
-    <button class="carousel-btn left" onclick="prevImage()">◀</button>
+    <button class="carousel-btn left" onclick="prevImage(this)">◀</button>
 
     <div class="carousel-track">
       <div class="carousel-item" style="background-image: url('images/NAV1.jpg');"></div>
       <div class="carousel-item" style="background-image: url('images/NAV2.jpg');"></div>
     </div>
 
-    <button class="carousel-btn right" onclick="nextImage()">▶</button>
+    <button class="carousel-btn right" onclick="nextImage(this)">▶</button>
   </div>
 </div>
 
@@ -624,7 +626,7 @@
   <h2 style="margin: 60px 0 20px 0; color: #a00000;">ROQUETAS DEL MAR</h2>
 
   <div class="carousel">
-    <button class="carousel-btn left" onclick="prevImage()">◀</button>
+    <button class="carousel-btn left" onclick="prevImage(this)">◀</button>
 
     <div class="carousel-track">
       <div class="carousel-item" style="background-image: url('images/ROQ1.jpg');"></div>
@@ -632,7 +634,7 @@
       <div class="carousel-item" style="background-image: url('images/ROQ3.jpg');"></div>
     </div>
 
-    <button class="carousel-btn right" onclick="nextImage()">▶</button>
+    <button class="carousel-btn right" onclick="nextImage(this)">▶</button>
   </div>
 </div>
 
@@ -644,7 +646,7 @@
   <h2 style="margin: 60px 0 20px 0; color: #a00000;">CULLERA</h2>
 
   <div class="carousel">
-    <button class="carousel-btn left" onclick="prevImage()">◀</button>
+    <button class="carousel-btn left" onclick="prevImage(this)">◀</button>
 
     <div class="carousel-track">
       <div class="carousel-item" style="background-image: url('images/CULL1.jpg');"></div>
@@ -652,7 +654,7 @@
       <div class="carousel-item" style="background-image: url('images/CULL3.jpg');"></div>
     </div>
 
-    <button class="carousel-btn right" onclick="nextImage()">▶</button>
+    <button class="carousel-btn right" onclick="nextImage(this)">▶</button>
   </div>
 </div>
 
@@ -664,7 +666,7 @@
   <h2 style="margin: 60px 0 20px 0; color: #a00000;">AVILA</h2>
 
   <div class="carousel">
-    <button class="carousel-btn left" onclick="prevImage()">◀</button>
+    <button class="carousel-btn left" onclick="prevImage(this)">◀</button>
 
     <div class="carousel-track">
       <div class="carousel-item" style="background-image: url('images/avila1.jpg');"></div>
@@ -672,7 +674,7 @@
       <div class="carousel-item" style="background-image: url('images/avila3.jpg');"></div>
     </div>
 
-    <button class="carousel-btn right" onclick="nextImage()">▶</button>
+    <button class="carousel-btn right" onclick="nextImage(this)">▶</button>
   </div>
 </div>
 
@@ -684,7 +686,7 @@
   <h2 style="margin: 60px 0 20px 0; color: #a00000;">SIGUENZA</h2>
 
   <div class="carousel">
-    <button class="carousel-btn left" onclick="prevImage()">◀</button>
+    <button class="carousel-btn left" onclick="prevImage(this)">◀</button>
 
     <div class="carousel-track">
       <div class="carousel-item" style="background-image: url('images/SIG1.jpg');"></div>
@@ -692,7 +694,7 @@
       <div class="carousel-item" style="background-image: url('images/SIG3.jpg');"></div>
     </div>
 
-    <button class="carousel-btn right" onclick="nextImage()">▶</button>
+    <button class="carousel-btn right" onclick="nextImage(this)">▶</button>
   </div>
 </div>
 
@@ -704,7 +706,7 @@
   <h2 style="margin: 60px 0 20px 0; color: #a00000;">SEGOVIA</h2>
 
   <div class="carousel">
-    <button class="carousel-btn left" onclick="prevImage()">◀</button>
+    <button class="carousel-btn left" onclick="prevImage(this)">◀</button>
 
     <div class="carousel-track">
       <div class="carousel-item" style="background-image: url('images/SEG1.jpg');"></div>
@@ -712,7 +714,7 @@
       <div class="carousel-item" style="background-image: url('images/SEG3.jpg');"></div>
     </div>
 
-    <button class="carousel-btn right" onclick="nextImage()">▶</button>
+    <button class="carousel-btn right" onclick="nextImage(this)">▶</button>
   </div>
 </div>
 
@@ -724,7 +726,7 @@
   <h2 style="margin: 60px 0 20px 0; color: #a00000;">TOLEDO</h2>
 
   <div class="carousel">
-    <button class="carousel-btn left" onclick="prevImage()">◀</button>
+    <button class="carousel-btn left" onclick="prevImage(this)">◀</button>
 
     <div class="carousel-track">
       <div class="carousel-item" style="background-image: url('images/TOL1.jpg');"></div>
@@ -732,7 +734,7 @@
       <div class="carousel-item" style="background-image: url('images/TOL3.jpg');"></div>
     </div>
 
-    <button class="carousel-btn right" onclick="nextImage()">▶</button>
+    <button class="carousel-btn right" onclick="nextImage(this)">▶</button>
   </div>
 </div>
 
@@ -744,7 +746,7 @@
   <h2 style="margin: 60px 0 20px 0; color: #a00000;">MÁS VIAJES</h2>
 
   <div class="carousel">
-    <button class="carousel-btn left" onclick="prevImage()">◀</button>
+    <button class="carousel-btn left" onclick="prevImage(this)">◀</button>
 
     <div class="carousel-track">
       <div class="carousel-item" style="background-image: url('images/VIAJE1.jpg');"></div>
@@ -756,7 +758,7 @@
       <div class="carousel-item" style="background-image: url('images/VIAJE7.jpg');"></div>
     </div>
 
-    <button class="carousel-btn right" onclick="nextImage()">▶</button>
+    <button class="carousel-btn right" onclick="nextImage(this)">▶</button>
   </div>
 </div>
 
@@ -782,33 +784,34 @@ function openGift() {
   }, 1700);
 }
 
- // CARRUSEL DE FOTOS
-let currentIndex = 0;
-const items = document.querySelectorAll('.carousel-item');
+// CARRUSEL INDEPENDIENTE POR CADA PÁGINA
+function nextImage(button) {
+  const carousel = button.closest('.carousel');
+  const track = carousel.querySelector('.carousel-track');
+  const items = carousel.querySelectorAll('.carousel-item');
 
-function showImage(index) {
-  const track = document.querySelector('.carousel-track');
-  const total = items.length;
+  let index = parseInt(carousel.getAttribute('data-index')) || 0;
+  index++;
 
-  // Loop circular
-  if (index < 0) index = total - 1;
-  if (index >= total) index = 0;
+  if (index >= items.length) index = 0;
 
-  currentIndex = index;
+  carousel.setAttribute('data-index', index);
   track.style.transform = `translateX(-${index * 100}%)`;
 }
 
-// Funciones para las flechas
-function nextImage() {
-  showImage(currentIndex + 1);
-}
+function prevImage(button) {
+  const carousel = button.closest('.carousel');
+  const track = carousel.querySelector('.carousel-track');
+  const items = carousel.querySelectorAll('.carousel-item');
 
-function prevImage() {
-  showImage(currentIndex - 1);
-}
+  let index = parseInt(carousel.getAttribute('data-index')) || 0;
+  index--;
 
-// Inicializamos mostrando la primera imagen
-showImage(0);
+  if (index < 0) index = items.length - 1;
+
+  carousel.setAttribute('data-index', index);
+  track.style.transform = `translateX(-${index * 100}%)`;
+}
   
 </script>
 
