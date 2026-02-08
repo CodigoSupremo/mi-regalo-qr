@@ -235,16 +235,15 @@
 
     .carousel-track {
       display: flex;
-      overflow: hidden;
       width: 100%;
+      transition: transform 0.5s ease;
     }
 
     .carousel-item {
-      min-width: 100%;
+      flex: 0 0 100%; /* ¡Cada foto ocupa todo el ancho del contenedor! */
       height: 400px;
       background-size: cover;
       background-position: center;
-      transition: transform 0.5s ease;
     }
 
     .carousel-btn {
@@ -568,12 +567,16 @@ const items = document.querySelectorAll('.carousel-item');
 function showImage(index) {
   const track = document.querySelector('.carousel-track');
   const total = items.length;
-  if (index < 0) index = total - 1; // si vamos atrás desde la primera, va a la última
-  if (index >= total) index = 0;    // si vamos adelante desde la última, vuelve a la primera
+
+  // Loop circular
+  if (index < 0) index = total - 1;
+  if (index >= total) index = 0;
+
   currentIndex = index;
   track.style.transform = `translateX(-${index * 100}%)`;
 }
 
+// Funciones para las flechas
 function nextImage() {
   showImage(currentIndex + 1);
 }
@@ -582,7 +585,7 @@ function prevImage() {
   showImage(currentIndex - 1);
 }
 
-// Inicializamos mostrando la primera foto
+// Inicializamos mostrando la primera imagen
 showImage(0);
   
 </script>
