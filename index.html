@@ -10,7 +10,7 @@
       background: white;
       color: #a00000;
       font-family: sans-serif;
-      overflow: hidden; /* bloquea el scroll en general */
+      margin: 0;
     }
 
     body::before {
@@ -271,6 +271,7 @@
 
     /* Solo las páginas con esta clase tendrán scroll */
     .page.scrollable {
+      height: 100vh;
       overflow-y: auto;
       -webkit-overflow-scrolling: touch;
     }
