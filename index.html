@@ -50,16 +50,21 @@
 
     /* Botón principal */
     button {
-      margin-top: 20px;
-      padding: 12px 26px;
-      border-radius: 40px;
+      padding: 14px 28px;
+      font-size: 18px;
       border: none;
-      background: white;
-      color: #a00000;
-      font-size: 14px;
+      border-radius: 30px;
+      background: linear-gradient(135deg, #ff4d6d, #c9184a);
+      color: white;
       cursor: pointer;
-      font-weight: bold;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
     }
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+}
 
     /* Botón volver */
     .back {
@@ -248,6 +253,7 @@
 <!-- PANTALLA 2 – SMARTBOX -->
 <div class="page" id="page2">
   <button class="back" onclick="goToPage(1)">← Volver</button>
+
   
   <!-- BLOQUE 1-->
   <div class="smartbox-card fade">
