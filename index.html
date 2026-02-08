@@ -768,52 +768,56 @@
 
 <script>
   
-function goToPage(pageNumber) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.getElementById('page' + pageNumber).classList.add('active');
-}
-
-function openGift() {
-  goToPage('Open');
-
-  const box = document.getElementById('giftBox');
-  box.classList.remove('open');
-
-  setTimeout(() => {
-    box.classList.add('open');
-  }, 200);
-
-  setTimeout(() => {
-    goToPage(2);
-  }, 1700);
-}
-
-// CARRUSEL INDIVIDUAL POR CADA GALERÍA
-document.querySelectorAll('.carousel').forEach(carousel => {
-  let currentIndex = 0;
-  const track = carousel.querySelector('.carousel-track');
-  const items = carousel.querySelectorAll('.carousel-item');
-
-  function showImage(index) {
-    const total = items.length;
-
-    if (index < 0) index = total - 1;
-    if (index >= total) index = 0;
-
-    currentIndex = index;
-    track.style.transform = `translateX(-${index * 100}%)`;
+  function goToPage(pageNumber) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById('page' + pageNumber).classList.add('active');
   }
 
-  carousel.querySelector('.carousel-btn.left').onclick = () => {
-    showImage(currentIndex - 1);
-  };
+  function openGift() {
+    goToPage('Open');
 
-  carousel.querySelector('.carousel-btn.right').onclick = () => {
-    showImage(currentIndex + 1);
-  };
+    const box = document.getElementById('giftBox');
+    box.classList.remove('open');
 
-  showImage(0);
-});
+    setTimeout(() => {
+      box.classList.add('open');
+    }, 200);
+
+    setTimeout(() => {
+      goToPage(2);
+    }, 1700);
+  }
+
+  // ESPERAR A QUE CARGUE EL DOM
+  document.addEventListener("DOMContentLoaded", function () {
+
+    document.querySelectorAll('.carousel').forEach(carousel => {
+      let currentIndex = 0;
+      const track = carousel.querySelector('.carousel-track');
+      const items = carousel.querySelectorAll('.carousel-item');
+
+      function showImage(index) {
+        const total = items.length;
+
+        if (index < 0) index = total - 1;
+        if (index >= total) index = 0;
+
+        currentIndex = index;
+        track.style.transform = `translateX(-${index * 100}%)`;
+       }
+
+      carousel.querySelector('.carousel-btn.left').onclick = () => {
+        showImage(currentIndex - 1);
+      };
+
+      carousel.querySelector('.carousel-btn.right').onclick = () => {
+        showImage(currentIndex + 1);
+      };
+
+      showImage(0);
+    });
+
+  });
   
 </script>
 
