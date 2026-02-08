@@ -492,18 +492,22 @@ button:hover {
     document.getElementById('page' + pageNumber).classList.add('active');
   }
 
-  function createHearts() {
-    const heartsContainer = document.getElementById("hearts");
-    heartsContainer.innerHTML = "";
+    function createHearts() {
+      const heartsContainer = document.getElementById("hearts");
+      heartsContainer.innerHTML = "";
 
-    for (let i = 0; i < 8; i++) {
-      const heart = document.createElement("div");
-      heart.className = "heart";
-      heart.innerText = "❤️";
-      heart.style.left = (Math.random() * 80 - 40) + "px";
-      heart.style.animationDelay = (Math.random() * 0.4) + "s";
-      heartsContainer.appendChild(heart);
+      for (let i = 0; i < 10; i++) {
+        const heart = document.createElement("div");
+        heart.className = "heart";
+        heart.innerText = "❤️";
+
+        heart.style.left = (Math.random() * 60 - 30) + "px";
+        heart.style.animationDelay = (Math.random() * 0.4) + "s";
+
+        heartsContainer.appendChild(heart);
+      }
     }
+
   }
 
   function openGift() {
