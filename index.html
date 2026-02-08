@@ -238,11 +238,13 @@
       width: 100%;
       max-width: 600px;
       margin: 50px auto;
+      overflow: hidden; /* bloquea scroll lateral */
     }
 
     .carousel-track {
       display: flex;
       width: 100%;
+      overflow: hidden; /* evita desplazamiento lateral */
       transition: transform 0.5s ease;
     }
 
@@ -267,8 +269,8 @@
       border-radius: 8px;
     }
 
-    .carousel-btn.left { left: -50px; }
-    .carousel-btn.right { right: -50px; }
+    .carousel-btn.left { left: 10px; }
+    .carousel-btn.right { right: 10px; }
 
     /* Solo las páginas con esta clase tendrán scroll */
     .page.scrollable {
