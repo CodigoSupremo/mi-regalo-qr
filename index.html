@@ -10,6 +10,7 @@
       background: white;
       color: #a00000;
       font-family: sans-serif;
+      overflow: hidden; /* bloquea el scroll en general */
     }
 
     body::before {
@@ -268,11 +269,11 @@
     .carousel-btn.left { left: -50px; }
     .carousel-btn.right { right: -50px; }
 
-    html, body {
-      overflow: hidden; /* bloquea scroll vertical y horizontal */
-      height: 100%;
+    /* Solo las páginas con esta clase tendrán scroll */
+    .page.scrollable {
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
     }
-
 
   </style>
 </head>
@@ -295,7 +296,7 @@
 </div>
 
 <!-- PANTALLA 2 – SMARTBOX -->
-<div class="page" id="page2">
+<div class="page scrollable" id="page2">
   <button class="back" onclick="goToPage(1)">← Volver</button>
 
   
